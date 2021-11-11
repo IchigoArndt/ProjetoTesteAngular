@@ -16,7 +16,23 @@
 <button (click)="addCurso(valorFiltro.value)">Adicionar Curso</button>
 
 <ul>
-  <li *ngFor="let item of livros|filtroArry:novoCurso">
+  <li *ngFor="let item of livros|filtroArry:valorFiltro">
       {{item}}
   </li>
 </ul>
+
+<h5>Pipe Impuro</h5>
+
+<ul>
+  <li *ngFor="let item of livros|filtroArryImpuro:valorFiltro">
+      {{item}}
+  </li>
+</ul>
+
+<br>
+<h5>
+  Pipe Async
+</h5>
+
+<p>{{valorAsync | async}}</p>
+

@@ -13,7 +13,7 @@ export class FiltroArryPipe implements PipeTransform {
     if(value.length == 0 || args === undefined)
       return value;
 
-    let filtro = args.toLocaleLowerCase();
+    let filtro = args;
     return value.filter( x => x.toLocaleLowerCase().indexOf(filtro) != -1);
   }
 
