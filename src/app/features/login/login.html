@@ -1,0 +1,82 @@
+<section class="Propiedade Binding">
+
+  <!--<article>
+    <h1> Teste Data Binding</h1>
+    <p>Teste de interpolação : {{url}}</p>
+    <p>Teste de Metodos : {{getValor()}}</p>
+  </article>-->
+  <div>
+    Selecione uma Classe:
+    <select #classe (change)="0">
+    <option value="alert-success">Sucesso</option>
+    <option value="alert-danger">Perigo</option>
+    <option value="alert-warning">Aviso</option>
+    </select>
+    <br><br>
+
+<div class="alert {{classe.value}}" role="alert">
+Deve mudar a cor do texto conforme o selecionado
+</div>
+
+<!-- Style Binding-->
+
+<div class="alert alert-danger" role="alert"
+[style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+Esse texto em teoria deve aparecer somente quando acontecer um erro
+</div>
+
+<div>
+  <button (click)="botaoClique()" class="btn btn-primary">Me Clique</button>
+
+  <br>
+  <br>
+
+
+        <!--Teste de Evento Binding-->
+  <input type="text"
+  (keyup)="onKeyUp($event)"
+  (keyup.enter)="salvarValor($event.target)"
+  (blur)="salvarValor($event.target)"/>
+<!--(keyup.enter)="salvarValor($event.target) => Server para quando
+      for preciosando o enter no formulario-->
+  <p>Valor Atual : {{valorAtual}}</p>
+  <p>Valor Salvo : {{valorSalvo}}</p>
+  <br>
+  <span
+  (mouseover)="onMouseOverOut()"
+  (mouseout)="onMouseOverOut()"
+  [class.highlight]="isMouseOver"
+  >Passe o Mouse</span>
+  <br>
+</div>
+<br>
+<section class="two-way-binding">
+  <article>
+    <h3>two-way-binding</h3>
+    <div>
+        <input type="text"
+          [value]="nome"
+          (input)="nome = ($any($event).target.value)"
+          />
+
+          <input type="text"
+          [ngModel]="nome"
+          (ngModelChange)="nome = $event"
+          />
+
+          <input type="text"
+          [(ngModel)]="nome"/>
+          <br>
+        <p>Você Digitou : {{nome}}</p>
+        <br>
+        <br>
+        <input type="text" [(ngModel)]="pessoa.nome"/>
+        <input type="text" [(ngModel)]="pessoa.idade"/>
+    </div>
+  </article>
+</section>
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Outup Properties</h3>
+  </article>
+</section>
