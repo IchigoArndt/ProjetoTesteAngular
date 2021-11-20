@@ -1,12 +1,6 @@
-<p>criar-cruso works!</p>
-
-<h5>Lista de cursos</h5>
-
-<input type="text" #cursoInput>
-<Button (click)="onAddCurso(cursoInput.value)">Adicionar Curso</Button>
-
-<ul>
-  <li *ngFor="let curso of cursos">
-    Cursos :{{curso}}
-  </li>
-</ul>
+<div class="collection">
+  <a href="#!" class="collection-item"
+  *ngFor="let item of cursos"
+  [routerLink]="['/curso', item.id]">
+  {{item.nome}}</a>
+</div>

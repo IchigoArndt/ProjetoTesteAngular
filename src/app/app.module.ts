@@ -29,6 +29,11 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { FiltroArryPipe } from './features/pipes/filtro-arry.pipe';
 import { FiltroArryImpuroPipe } from './features/pipes/filtro-arry-impuro.pipe';
+import 'materialize-css';
+import { routing } from './features/routes/app.routing';
+import { CursoDetalheComponent } from './features/curso-detalhe/curso-detalhe.component';
+import { CursosService } from './features/ModuloCursoServico/cursos.service';
+import { CurosNaoEncontradoComponent } from './features/curos-nao-encontrado/curos-nao-encontrado.component';
 
 registerLocaleData(localePt);
 
@@ -55,15 +60,19 @@ registerLocaleData(localePt);
     ExemplosPipesComponent,
     CamelCasePipe,
     FiltroArryPipe,
-    FiltroArryImpuroPipe
+    FiltroArryImpuroPipe,
+    CursoDetalheComponent,
+    CurosNaoEncontradoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   providers: [ServicoService,
               LogService,
+              CursosService,
               {provide: LOCALE_ID,
                useValue:'pt-BR'}],
   bootstrap: [AppComponent]

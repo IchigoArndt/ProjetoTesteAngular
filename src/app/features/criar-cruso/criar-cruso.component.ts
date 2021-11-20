@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ServicoService } from '../servicos/servico.service';
+import { CursosService } from '../ModuloCursoServico/cursos.service';
 
 @Component({
   selector: 'app-criar-curso',
@@ -9,17 +8,12 @@ import { ServicoService } from '../servicos/servico.service';
 })
 export class CriarCrusoComponent implements OnInit {
 
-cursos: string[] = [];
+cursos: any[];
 
-  constructor(private cursosService: ServicoService) { }
+  constructor(private cursosService: CursosService) { }
 
   ngOnInit(): void {
-    this.cursos = this.cursosService.getCursos();
-  }
-
-  onAddCurso(curso:string){
-    console.log(curso);
-    this.cursosService.addCurso(curso);
+  this.cursos = this.cursosService.getCursos();
   }
 
 }
