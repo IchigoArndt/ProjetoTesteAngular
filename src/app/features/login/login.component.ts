@@ -1,5 +1,7 @@
 import { Component, OnInit, } from "@angular/core";
 import {FormsModule} from "@angular/forms";
+import { AuthService } from "./auth.service";
+import { Usuario } from "./usuario";
 
 @Component({
 selector: 'login',
@@ -8,8 +10,8 @@ templateUrl: './login.html'})
 
 export class Login implements OnInit
 {
-
-  url : string = 'Teste';
+//#region
+  /*url : string = 'Teste';
   valorAtual : string = '';
 
 
@@ -43,7 +45,15 @@ pessoa: any = {
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
   }
-  constructor () {}
+  *///#endregion
+
+public usuario: Usuario = new Usuario();
+
+  constructor (private authService: AuthService) {}
 
   ngOnInit () {}
+  logar()
+  {
+    this.authService.logar(this.usuario);
+  }
 }

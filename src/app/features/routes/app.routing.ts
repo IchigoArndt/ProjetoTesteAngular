@@ -1,11 +1,11 @@
-import { CriarCrusoComponent } from "../criar-cruso/criar-cruso.component";
+import { CriarCrusoComponent } from "../Cursos/criar-cruso/criar-cruso.component";
 import { ModuleWithProviders } from "@angular/core";
 
 import { Login } from "../login/login.component";
 import { RouterModule, Routes } from "@angular/router";
-import { DiretivaNgforComponent } from "../diretiva-ngfor/diretiva-ngfor.component";
-import { CursoDetalheComponent } from "../curso-detalhe/curso-detalhe.component";
-import { CurosNaoEncontradoComponent } from "../curos-nao-encontrado/curos-nao-encontrado.component";
+import { DiretivaNgforComponent } from "../Diretivas/diretiva-ngfor/diretiva-ngfor.component";
+import { CursoDetalheComponent } from "../Cursos/curso-detalhe/curso-detalhe.component";
+import { CurosNaoEncontradoComponent } from "../Cursos/curos-nao-encontrado/curos-nao-encontrado.component";
 
 const APP_ROUTES: Routes = [
   {path: 'login', component: Login},

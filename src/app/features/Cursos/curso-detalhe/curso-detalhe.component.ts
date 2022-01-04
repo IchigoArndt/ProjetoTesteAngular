@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CursosService } from '../ModuloCursoServico/cursos.service';
+import { CursosService } from '../../ModuloCursoServico/cursos.service';
 
 @Component({
   selector: 'app-curso-detalhe',
@@ -30,7 +30,7 @@ curso: any;
       this.curso = this.cursoService.getCurso(this.id);
 
       if(this.curso == null){
-        this.router.navigate(['/naoEncontrado'])
+        this.router.navigate(['/cursos/naoEncontrado'])
       }
     }
       )

@@ -1,10 +1,11 @@
-<section class="Propiedade Binding">
+<!--<section class="Propiedade Binding">
 
-  <!--<article>
+
+  <article>
     <h1> Teste Data Binding</h1>
     <p>Teste de interpolação : {{url}}</p>
     <p>Teste de Metodos : {{getValor()}}</p>
-  </article>-->
+  </article>
   <div>
     Selecione uma Classe:
     <select #classe (change)="0">
@@ -18,7 +19,7 @@
 Deve mudar a cor do texto conforme o selecionado
 </div>
 
-<!-- Style Binding-->
+Style Binding
 
 <div class="alert alert-danger" role="alert"
 [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
@@ -32,13 +33,13 @@ Esse texto em teoria deve aparecer somente quando acontecer um erro
   <br>
 
 
-        <!--Teste de Evento Binding-->
+  Teste de Evento Binding
   <input type="text"
   (keyup)="onKeyUp($event)"
   (keyup.enter)="salvarValor($event.target)"
   (blur)="salvarValor($event.target)"/>
-<!--(keyup.enter)="salvarValor($event.target) => Server para quando
-      for preciosando o enter no formulario-->
+(keyup.enter)="salvarValor($event.target) => Server para quando
+      for preciosando o enter no formulario
   <p>Valor Atual : {{valorAtual}}</p>
   <p>Valor Salvo : {{valorSalvo}}</p>
   <br>
@@ -79,4 +80,25 @@ Esse texto em teoria deve aparecer somente quando acontecer um erro
   <article>
     <h3>Input/Outup Properties</h3>
   </article>
-</section>
+</section>-->
+<h5>LOGIN !_!</h5>
+<div class="row">
+  <div class="input-field col s12">
+    <input [(ngModel)]="usuario.Nome" id="usuario" type="text" class="validate">
+    <label class="active" for="usuario">Usuario:</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <input [(ngModel)]="usuario.Senha" id="senha" type="password" class="validate">
+    <label class="active" for="senha">Senha:</label>
+  </div>
+</div>
+
+<button class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+        (click)="logar()">Login
+  <i class="material-icons right">send</i>
+</button>
